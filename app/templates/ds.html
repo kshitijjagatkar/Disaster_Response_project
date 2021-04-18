@@ -1,0 +1,177 @@
+{% extends "base.html" %}
+{% block content%}
+<div class="row">
+  <div class="col-12">
+    <div class="mt-3">
+      <h3>Stack Overflow 2020 Developer Survey</h3>
+      <h4 class="text-muted">The Data Science Industry Analysis</h4>
+      <p class="text-muted text-justify mr-4"> Each year, Stack Overflow publish survey analysis about the developer
+        community about everything from their favorite technologies to their job preferences.
+        The survey is very useful for the developer community, so I think to increase the benefits by taking a part of
+        the
+        survey which interested with Data Scientists and Machine Learning specialist to analysis it because the
+        statistics
+        can tell us more about our community such as Geographic, Demographic, Industrial and behaviors Analysis. Let's
+        Begin and Have Fun!</p>
+
+
+      <h4>Geographic :</h4>
+      <h5 class=" p-2">Top Countries having Highest Number of DS/ML Specialists</h5>
+      <div id="country_bar"></div>
+
+      <p class="text-muted text-justify mt-3 mr-4">You can see clear picture that Unites States still stand out at the
+        number one position with 36% around for the role as a Data scientists and machine learning specialists. Well,
+        the
+        hype went really fast and with that India grabbed 2nd position producing little more than 20% which, In 2018
+        India
+        no where around top 5. Followed by United Kingdom and Germany with 16% and 8% respectively. then the trend is
+        almost similar by the Australia, France, Canada, Netherlands, Poland, Switzerland.</p>
+
+
+
+
+
+      <h4>Demographic :</h4>
+      <h5 class="p-3">Gender</h5>
+      <div class="text-center">
+        <div id="gender_pie"></div>
+        <p class="text-muted mr-7">Gender of The Data Scientist / Machine Learning Specialist </p>
+      </div>
+      <p class="text-muted text-justify p-2">Needs certainly attention here, Also if you observe the overall industry
+        you
+        will find somewhat similar or slightly improved numbers. This is like you will find more male chefs than females
+        and also more female teachers than male. There are 17% woman who work as data scientists or ml specialists. 1.3%
+        include non-binary, genderqueer or those who did not confirm. And 81% male which was 5% lesser compared to 2018.
+      </p>
+
+
+
+
+      <h5 class="p-3">Age</h5>
+      <div class="text-center">
+        <div id="Age_bar"></div>
+      </div>
+      <p class="text-muted text-justify p-2">Little surprised? Yes, the age which is having the most data scientists is
+        26
+        years old and also wait what! 15 year old yeah you might be picturing the small kid having spectacles with high
+        intelligence blowing out minds of some news channel’s anchor then yeah they are the younger ones fall into this
+        this range. Shout-out to old ones who are still serving the industries at 63.</p>
+
+
+
+
+
+      <h5 class="p-3">Formal Education</h5>
+      <div class="text-center">
+        <div id="formal_edu"></div>
+      </div>
+      <p class="text-muted text-justify p-2 mt-12">Well well, Masters they say, With more than 40% who are data
+        scientists
+        / machine learning specialist has completed their Master’s degree in their respective major's. Followed by
+        Bachelor’s degree people scoring above 30% and then some Ph.D. holders. And the last ones entering with their
+        school bags scoring below one percent.</p>
+
+
+
+      <h5 class="p-3">Major Field</h5>
+      <div class="text-center">
+        <div id="major_edu"></div>
+      </div>
+      <p class="text-muted text-justify p-2">This one is lil obvious, people who completed their formal education has
+        these majors. Computer science people holds the 1st position, followed by the essential Mathematics and
+        Statistics
+        people. Followed folks who wish they could have had their major in computer science or end up taking decision
+        about their career in this field. And folks, who are poet, philosopher, nurse, some artists, musicians and lot
+        many welcome to the data science world.</p>
+
+
+
+
+      <h4>Industrial Analysis</h4>
+      <h5 class="p-3">Languages</h5>
+      <div class="text-center">
+        <div id="lang_pie"></div>
+      </div>
+      <p class="text-muted text-justify p-2">The pythonist or pythonior haha..felt good? One of the most loved language
+        too yeah 27% of the total pie. Also do not forgot rest of the portion is covered by the other languages. Never
+        one
+        is enough, SQL stand out at the 2nd most language used by the data scientists/ml specialists. Other big players
+        are also there manage to get some what similar results. Remember this is only for this particular role.</p>
+
+
+
+
+      <h5 class="p-3">Coding Experience</h5>
+      <div class="text-center">
+        <div id="yrs_code"></div>
+      </div>
+      <p class="text-muted text-justify p-2">This coding experience is considered overall(Since how many years they have
+        been coding). By observing we can say that most data scientists has coding experience of 5 years. There are also
+        2–3% of people who has less than a year of coding experience and working as a DS/ML sp. And some 1 percent
+        people
+        who has 50 plus experience in coding.</p>
+
+
+
+
+      <h5 class="p-3">Job Satisfaction</h5>
+      <div class="text-center">
+        <div id="job_sat"></div>
+      </div>
+      <p class="text-muted text-justify p-2">Here we can say the “sexiest job” statement was lot a lie, 42.6% are
+        overwhelmed by their job. If we combine the slightly satisfied and very satisfied then there will be more
+        satisfied people than compare to slightly dissatisfied and very dissatisfied combined. there are almost 12%
+        people
+        who were not willing to say anything about their job satisfaction.</p>
+
+
+
+
+      <h5 class="p-3">Highest salaries</h5>
+      <div class="text-center">
+        <div id="salary"></div>
+        <div id="us_salary"></div>
+      </div>
+      <p class="text-muted text-justify p-2">These are the top 12 countries who pays very high salaries amongst the
+        other.
+        The home of the mighty giant companies “United States” is one of the very top of all in terms of paying the high
+        amount to their employees. If we look at the broad spectrum of salaries of US, there are very few like very few
+        people who sit at the top with up to 2M dollar per year salary and lil more people with salaries ranging from
+        1M-1.75M dollar per year. And rest of the people sits at the average of $212k per year. It’s five times of a
+        average salary in the US which is around $50,000pa.</p>
+
+
+
+
+      <h5 class="p-3">Code as Hobby Thing</h5>
+      <div class="text-center">
+        <div id="hobby"></div>
+        <p class="text-muted mr-7">The data scientists/Machine learning specialist who code as hobby </p>
+      </div>
+      <p class="text-muted text-justify p-2">Well this one is self explanatory, Almost 30% folks doesn't like to code
+        can
+        we say? hmm, I like but it’s not my hobby they say.</p>
+
+      <h3 class="p-3">Summary</h3>
+      <p class="text-muted text-justify p-2 mr-2">As we seen there are so many new things that we get to know some of
+        them
+        were lil surprises and some of which were already known to us but had a truthful conclusion on them. If you are
+        looking forward to do a career in this field then I hope this blog might cheer you up. Let me know if you have
+        any suggestions or need any help. I have provided some useful links related to this if you wanna know more.</p>
+      <p class="text-muted text-justify p-2">For the dataset and information regarding Stack overflow developer survey
+        2020 click <a href="https://insights.stackoverflow.com/survey/2020">here</a></p>
+      <p class="text-muted text-justify p-2">And if you want to see the complete analysis of this then for my jupyter
+        notebook click <a href="https://github.com/kshitijjagatkar/Stack-Overflow-2020-Developer-Survey">here</a> </p>
+
+
+    </div>
+  </div>
+</div>
+
+<head>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<script src="{{ url_for('static', filename='js/plotly.js')}}"></script>
+
+{% endblock%}
