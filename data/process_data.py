@@ -5,6 +5,14 @@ import sys
 
 
 def load_data(messages_filepath, categories_filepath):
+
+    """
+    Input
+    :param messages_filepath:
+    :param categories_filepath:
+        This function reads these both data sets and stores in each varibales
+    :return: & returns merged dataset
+    """
     
     messages = pd.read_csv(messages_filepath)   # load messages dataset
     categories = pd.read_csv(categories_filepath)  # load categories dataset
@@ -13,6 +21,13 @@ def load_data(messages_filepath, categories_filepath):
 
 
 def clean_data(df):
+
+    """
+    Input
+    :param df: takes merged data frame as an input
+        this function performs tasks as clean, concatinate, drop duplicates
+    :return: it returns cleaned new data frame.
+    """
     
     categories = df['categories'].str.split(';',expand=True)  # create a dataframe of the 36 individual category columns
     
@@ -55,11 +70,19 @@ def clean_data(df):
     return df 
     
 def save_data(df):
+    """
+    Input
+    :param df: Takes df as an input
+        This function performs loading the data into a database.
+        here we use sqlite database
+    :return: It does not return anything
+    """
     
     #Save the clean dataset into an sqlite database.
     engine3 = create_engine('sqlite:///data/disaster_response.db')
     df.to_sql('msgs_categories', engine3, if_exists="replace",index=False) 
 
+    return None
 
 def main():
     if len(sys.argv) == 4:
