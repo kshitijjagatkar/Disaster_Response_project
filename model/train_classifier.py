@@ -31,12 +31,17 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.base import BaseEstimator, TransformerMixin
 
 def load_data(database_filepath):
+    """
+    :param database_filepath: Takes database filepath as an input
+        It unloads the data into data frame and also creates X & y variables
+    :return: It returns X, y variables and target column names
+    """
     #create an engine and extract data from sql
     print("\n")
     print("Loading data into DataFrame")
 
-    conn = sqlite3.connect(database_filepath)
-    df = pd.read_sql('SELECT * FROM msgs_categories', conn)
+    conn = sqlite3.connect(database_filepath)  # connecting to database
+    df = pd.read_sql('SELECT * FROM msgs_categories', conn)  #Using sql query in pandas real_sql method reads the data
     
     #preparing data
     print()
@@ -45,7 +50,7 @@ def load_data(database_filepath):
     X = df.message.values
     y = df.loc[:,'related':].values
 
-    category_names = df.loc[:,'related':].columns
+    category_names = df.loc[:,'related':].columns  #these are tagert(y) column names
 
     print("returned X, y & category_names")
     
@@ -53,11 +58,18 @@ def load_data(database_filepath):
 
 
 def tokenize(text):
+    """
+    :param text: It takes text as an input. Note- It does't take string dtype
+        this function performs steps for text processing such as tokenization, removing stop words,
+         and also perform strip the words to it's root using lemmatizer.
+    :return: returns clean tokens
+    """
 
-    tokens = word_tokenize(text)
-    stop_words = stopwords.words("english")
-    lemmatizer = WordNetLemmatizer()
-    
+    tokens = word_tokenize(text)  # performing tokenizing
+    stop_words = stopwords.words("english")  #taken out all stop words of english langauge in this variable
+    lemmatizer = WordNetLemmatizer()  # Instantiate lemmatizer
+
+    # performing lemmatizing plus removing stop words
     clean_tokens = [lemmatizer.lemmatize(word).lower().strip() for word in tokens if word not in stop_words]
     
     
@@ -65,6 +77,15 @@ def tokenize(text):
 
 
 def build_model():
+
+    """
+    Performs  Machine learning pipeline. Three estimators in which
+    first two vect & tfidf are transformers & last one "clf" is classifier.
+    vect: performs counting of each words.
+    tfidf: performs TF-IDF operations.
+    clf: Classifies output variables.
+    :return: Returns pipeline Intantiator
+    """
     
     pipeline = Pipeline([
         ('vect', CountVectorizer(tokenizer = tokenize)),
@@ -77,28 +98,45 @@ def build_model():
 
 def evaluate_model(model, X_test, y_test, category_names):
 
+    """
+    This function performs the evaluation of model.
+    Task such as Predicting, finding accuracy & generating classification report
+    :param model: pipeline.
+    :param X_test: Input test data.
+    :param y_test: target test data
+    :param category_names: target column names
+    :return: None
+    """
+
     print("\n")
     print("Model Returned...")
     print("\n")
     print("Predicting Model...")
 
-    y_pred = model.predict(X_test)
+    y_pred = model.predict(X_test)  # Predicting model
 
-    accuracy = (y_pred == y_test).mean()
+    accuracy = (y_pred == y_test).mean()  # finding accuracy
 
     print()    
     print("Accuracy:", accuracy)
     print('\n')
     
-    print('\n Classification Report')
+    print('\n Classification Report')  # Generating classification reports
     print(classification_report(y_test, y_pred, target_names=category_names,zero_division=0))
 
     return None
 
 
 def save_model(model, model_filepath):
+
+    """
+    Saving the model as pickle file.
+    :param model: takes model as an input
+    :param model_filepath: takes file location to save model
+    :return: None
+    """
     
-    pickle.dump(model, open(model_filepath, 'wb'))
+    pickle.dump(model, open(model_filepath, 'wb')) #dumping pickle file at given location.
 
     return None
 
