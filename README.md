@@ -6,7 +6,6 @@ Web API that classifies disaster messages.
 3. File Descriptions
 4. Installation
 5. Results
-6. Licensing, Authors, and Acknowledgements
 
 ## 1. Project Motivation
  I recently gained some data engineering skills So, I found out this project can help me build an overall intution about Data engineering.
