@@ -2,16 +2,20 @@
 Web API that classifies disaster messages.
 
 1. Project Motivation
-2. Project Components
-3. File Descriptions
-4. Installation
-5. Results
+2. Project Summary
+3. Project Components
+4. File Descriptions
+6. Installation & Run
+7. Results
 
 ## 1. Project Motivation
  I recently gained some data engineering skills So, I found out this project can help me build an overall intution about Data engineering.
  I applied these skills to analyze disaster data from Figure Eight to build a model for an API that classifies disaster messages.
 
-## 2. Project Components
+## 2. Project Summary
+ So, how this application helps people or organisation during disaster?. After running the app in the browser you have to put a message/query that you want process afte a while you will see to which departmen it belongs to. For eg your if your message goes like this "We need food and shelter" then it would recognize it belongs to food,shelter, or any helth emergency.
+
+## 3. Project Components
 This project basically divided into three sections as follows:
 1.   ETL (Extract Transform Load) Pipeline
      * Loads the messages and categories datasets
@@ -32,7 +36,7 @@ This project basically divided into three sections as follows:
     * Make visualization of data
     * Produce the final result
  
-## 3. File Description
+## 4. File Description
 1. Data Directory
       * This folder contains "process_data.py" which has all ETL code and perform pipeline tasks which takes input files "message.csv" &
         "categories.csv" produces database file for our model.
@@ -42,9 +46,11 @@ This project basically divided into three sections as follows:
       * this folder contains web page code. "run.py" takes care of running server & all our code. upper folders are templetes and static which contain html 
         & css, java files   respectively.
 
-## 4. Installation
-After downloading you need to have your fav code editor, I use pycharm. It's your choice what to use. Just download necessary packages before/while running program.
-then all good to go.
+## 5. Installation & Run
+After downloading you need to have your fav code editor, I use pycharm. It's your choice what to use. 
+  1. At very first go to the data folder & run process_data.py file. Check out file description above & documentation in the file for guidence.
+  2. Second is the model folder which has train_classifier.py file which you have to run. Check out file description above & documentation in the file for guidence.
+  3. thirdly run app.py file from app folder which runs the whole web app. Check out file description above & documentation in the file for guidence.
 
 ## 5. Results
 I tried with couple of algorithms, with various parameters & also with custom estimators after examining all those things I come with this solution which outputs
