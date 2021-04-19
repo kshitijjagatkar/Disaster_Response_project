@@ -93,7 +93,17 @@ def build_model():
         ('clf', MultiOutputClassifier(RandomForestClassifier()))
     ])
 
-    return pipeline
+    #set gridsearch parameters 
+    parameters = {
+
+        'vect__max_df': (0.5, 0.75, 1.0),
+        'vect__ngram_range': ((1, 1), (1, 2)),
+        'tfidf__smooth_idf': (True,False),
+        'tfidf__sublinear_tf': (False,True)
+    }
+    cv = GridSearchCV(pipeline, param_grid=parameters)
+
+    return cv
 
 
 def evaluate_model(model, X_test, y_test, category_names):
@@ -120,6 +130,7 @@ def evaluate_model(model, X_test, y_test, category_names):
     print()    
     print("Accuracy:", accuracy)
     print('\n')
+    print("\nBest Parameters:", cv.best_params_)
     
     print('\n Classification Report')  # Generating classification reports
     print(classification_report(y_test, y_pred, target_names=category_names,zero_division=0))
