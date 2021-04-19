@@ -36,7 +36,39 @@ This project basically divided into three sections as follows:
     * Make visualization of data
     * Produce the final result
  
-## 4. File Description
+## 4. File Structure & Description
+* app
+
+  | - template
+  
+  | |- base.html  #my-dashboard's base page
+  
+  | |- home.html #my-dashbord's welcome page
+  
+  | |- master.html # main page of web app
+  
+  | |- go.html # classification result page of web app
+  
+  |- run.py # Flask file that runs app
+
+* data
+
+  |- disaster_categories.csv # data to process
+  
+  |- disaster_messages.csv # data to process
+  
+  |- process_data.py
+  
+  |- disaster_response.db # database to save clean data to
+  
+* models
+ 
+  |- train_classifier.py
+  
+  |- trained_model.pkl # saved model
+  
+  README.md
+  
 1. Data Directory
       * This folder contains "process_data.py" which has all ETL code and perform pipeline tasks which takes input files "message.csv" &
         "categories.csv" produces database file for our model.
