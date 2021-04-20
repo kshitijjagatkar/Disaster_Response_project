@@ -89,7 +89,10 @@ I tried with couple of algorithms, with various parameters & also with custom es
 better results and performs faster compare to all those methods. If you wanna see those Exploratory analysis then checkout that repo.
 It performs with 94.85 accuracy I have also provided classification reports.
 
-![Screenshot (256)](https://user-images.githubusercontent.com/33245369/115155114-1013af80-a09c-11eb-8f27-74dc4886b2a5.png)
+Also check out output.txt file for the full result.
+
+![Screenshot (260)](https://user-images.githubusercontent.com/33245369/115398376-b4186a80-a204-11eb-81cd-40ef81fbacac.png)
+
 
 
     
