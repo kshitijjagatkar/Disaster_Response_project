@@ -74,6 +74,7 @@ def save_data(df, database_filepath):
     :param df: Takes df as an input
         This function performs loading the data into a database.
         here we use sqlite database
+    :param database_filepath: It has the database file path
     :return: It does not return anything
     """
 
@@ -110,8 +111,7 @@ def main():
               'datasets as the first and second argument respectively, as ' \
               'well as the filepath of the database to save the cleaned data ' \
               'to as the third argument. \n\nExample: python process_data.py ' \
-              'disaster_messages.csv disaster_categories.csv ' \
-              'DisasterResponse.db')
+              'disaster_messages.csv disaster_categories.csv ''DisasterResponse.db')
 
 
 if __name__ == '__main__':
