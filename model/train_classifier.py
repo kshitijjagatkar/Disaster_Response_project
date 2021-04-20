@@ -1,33 +1,25 @@
-import sys
-# import libraries
-import pandas as pd
-import numpy as np
-from sqlalchemy import create_engine
-import sqlite3
 import pickle
+import sqlite3
+import sys
 
 import nltk
+# import libraries
+import pandas as pd
 
 nltk.download(['punkt', 'wordnet', 'averaged_perceptron_tagger', 'stopwords'])
 
-from nltk.tokenize import word_tokenize, sent_tokenize
+from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 
-from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import GridSearchCV
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.pipeline import Pipeline, FeatureUnion
+from sklearn.pipeline import Pipeline
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 
-from sklearn.datasets import make_multilabel_classification
 from sklearn.multioutput import MultiOutputClassifier
-from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import classification_report
-from sklearn.naive_bayes import MultinomialNB
-
-from sklearn.base import BaseEstimator, TransformerMixin
 
 
 def load_data(database_filepath):
