@@ -1,4 +1,6 @@
-from flask import Flask, render_template, request, jsonify
+# Import libraries
+
+from flask import Flask, render_template, request
 
 import json
 import plotly
@@ -17,14 +19,24 @@ app = Flask(__name__)
 @app.route('/')
 @app.route('/home')
 def home():
-    return render_template('home.html')
+    return render_template('home.html')  # rendering Home page of web-dashboard
+
 
 @app.route('/ds')
 def ds():
-    return render_template('ds.html')
+    return render_template('ds.html')  # rendering data Science web page
+
 
 ############################################################################
 def tokenize(text):
+    """
+    This function processes each message and transform into tokens.
+    this process includes tokenizing, lemmatizing with conversion to lowercase & striping extra space
+
+    :param text:  Messages that to be tokenize.
+    :return: Clean token of  messages
+    """
+
     tokens = word_tokenize(text)
     lemmatizer = WordNetLemmatizer()
 
@@ -48,12 +60,11 @@ model = joblib.load("../models/trained_model.pkl")
 @app.route('/master')
 def master():
     # extract data needed for visuals
-    # TODO: Below is an example - modify to extract data for your own visuals
+
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
 
     # create visuals
-    # TODO: Below is an example - modify to create your own visuals
     graphs = [
         {
             'data': [
