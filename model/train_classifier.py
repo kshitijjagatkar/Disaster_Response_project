@@ -95,8 +95,7 @@ def build_model():
     parameters = {
 
         'vect__max_df': (0.75, 1.0),
-        'tfidf__smooth_idf': (True, False),
-        'tfidf__sublinear_tf': (False, True)
+        'tfidf__smooth_idf': (True, False)
     }
     cv = GridSearchCV(pipeline, param_grid=parameters)
 
