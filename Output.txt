@@ -1,0 +1,74 @@
+Loading data into DataFrame
+
+preparing data...
+returned X, y & category_names
+Building model...
+Training model...
+Started tokenizing...
+
+
+Cleaning tokens & Training Models...
+Evaluating model...
+
+
+Model Returned...
+
+
+Predicting Model...
+
+Accuracy: 0.9481583910822896
+
+
+
+Best Parameters: {'tfidf__smooth_idf': True, 'vect__max_df': 0.75}
+
+ Classification Report
+                        precision    recall  f1-score   support
+
+               related       0.83      0.95      0.89      3998
+               request       0.84      0.47      0.60       891
+                 offer       0.00      0.00      0.00        24
+           aid_related       0.78      0.67      0.72      2164
+          medical_help       0.74      0.06      0.11       435
+      medical_products       0.74      0.06      0.11       279
+     search_and_rescue       0.68      0.11      0.19       136
+              security       0.25      0.01      0.02        96
+              military       0.67      0.05      0.09       158
+           child_alone       0.00      0.00      0.00         0
+                 water       0.84      0.38      0.52       335
+                  food       0.86      0.58      0.69       584
+               shelter       0.81      0.34      0.48       468
+              clothing       1.00      0.09      0.16        70
+                 money       0.78      0.06      0.12       112
+        missing_people       1.00      0.02      0.03        63
+              refugees       0.75      0.02      0.03       170
+                 death       0.83      0.12      0.21       247
+             other_aid       0.64      0.04      0.07       692
+infrastructure_related       0.00      0.00      0.00       336
+             transport       0.74      0.06      0.11       235
+             buildings       0.82      0.10      0.18       269
+           electricity       1.00      0.03      0.05       115
+                 tools       0.00      0.00      0.00        35
+             hospitals       0.00      0.00      0.00        52
+                 shops       0.00      0.00      0.00        25
+           aid_centers       0.00      0.00      0.00        64
+  other_infrastructure       0.00      0.00      0.00       225
+       weather_related       0.86      0.68      0.76      1472
+                floods       0.92      0.41      0.57       431
+                 storm       0.79      0.48      0.59       479
+                  fire       1.00      0.02      0.04        53
+            earthquake       0.89      0.77      0.82       515
+                  cold       0.77      0.10      0.17       104
+         other_weather       0.67      0.03      0.06       267
+         direct_report       0.82      0.34      0.48      1010
+
+             micro avg       0.83      0.52      0.64     16609
+             macro avg       0.62      0.20      0.25     16609
+          weighted avg       0.77      0.52      0.56     16609
+           samples avg       0.67      0.48      0.51     16609
+
+Saving model...
+    MODEL: E:\Projects\Disaster_response_WebApp\models\classifier.pkl
+Trained model saved!
+
+(my_env) E:\Projects\Disaster_response_WebApp\models>
