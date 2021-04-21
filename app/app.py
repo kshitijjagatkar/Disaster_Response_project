@@ -64,6 +64,13 @@ def master():
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
 
+    ###############################
+    target_labels = df.iloc[:, 4:]
+    target_labels.drop(columns=['child_alone'], inplace=True)
+    target_frequency = [round((target_labels[col].value_counts(1)[1] * 100), 2) for col in target_labels.columns]
+    target_cols = target_labels.columns
+    ###############################
+
     # create visuals
     graphs = [
         {
@@ -83,7 +90,27 @@ def master():
                     'title': "Genre"
                 }
             }
+        },
+
+        {
+            'data': [
+                Bar(
+                    x=target_cols,
+                    y=target_frequency
+                )
+            ],
+
+            'layout': {
+                'title': 'Frequency of categories',
+                'yaxis': {
+                    'title': "Categories Frequency in %"
+                },
+                'xaxis': {
+                    'title': "Categories"
+                }
+            }
         }
+
     ]
 
     # encode plotly graphs in JSON
