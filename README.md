@@ -1,6 +1,12 @@
 # Disaster_Response_project
 Web API that classifies disaster messages.
 
+![Screenshot (266)](https://user-images.githubusercontent.com/33245369/115548097-b0e4b380-a2c4-11eb-911e-b90a7ad42df1.png)
+![Screenshot (268)](https://user-images.githubusercontent.com/33245369/115548119-b6da9480-a2c4-11eb-9bcd-4f23e6453562.png)
+
+
+
+
 1. Project Motivation
 2. Project Summary
 3. Project Components
@@ -90,6 +96,7 @@ better results and performs faster compare to all those methods. If you wanna se
 It performs with 94.85 accuracy I have also provided classification reports.
 
 Also check out output.txt file for the full result.
+
 
 ![Screenshot (260)](https://user-images.githubusercontent.com/33245369/115398376-b4186a80-a204-11eb-81cd-40ef81fbacac.png)
 
